@@ -1,0 +1,48 @@
+📡 Wireshark
+🎯 Purpose
+Wireshark is an open-source, GUI-based network packet analyzer used to capture, inspect, and troubleshoot network traffic in real time. It enables security analysts to examine protocol interactions, investigate suspicious network communications, and perform deep packet inspection.
+🧠 Key Concepts
+Packet Capture (PCAP): Intercepting network traffic passing through a selected network interface.
+Display Filters: Expressions applied after capture to isolate specific traffic of interest without altering the underlying capture file.
+Capture Filters: Criteria applied before capture using Berkeley Packet Filter (BPF) syntax to restrict what data is saved to disk.
+Protocol Hierarchy: A structured breakdown of the protocols present in a capture file and their relative traffic volume.
+TCP Streams: Reassembling individual TCP packets into a continuous human-readable conversation.
+💻 Commands & Display Filters
+Wireshark uses display filter syntax directly in its top filter bar:
+```text
+# Filter by Protocol
+http
+dns
+icmp
+
+# Filter by IP Address
+ip.addr == 192.168.1.50
+ip.src == 10.10.10.10
+ip.dst == 10.10.10.1
+
+# Filter by Port
+tcp.port == 80
+udp.port == 53
+
+# Combine Filters
+ip.src == 192.168.1.50 && tcp.port == 443
+http.request.method == "POST"
+```
+📋 Examples
+Reassembling an HTTP Stream: Right-click on an HTTP packet $\rightarrow$ Follow $\rightarrow$ TCP Stream to read plaintext request and response headers or payload data.
+Filtering DNS Queries for Malicious Domains: Use the filter `dns.flags.response == 0` to view outgoing DNS queries made by host machines.
+🔎 Investigation
+When performing network forensics or SOC triage with Wireshark:
+Navigate to Statistics $\rightarrow$ Protocol Hierarchy to identify abnormal traffic spikes (e.g., unexpected IRC or SSH volume).
+Check Statistics $\rightarrow$ Endpoints / Conversations to quickly pinpoint top talkers or external IP connections.
+Look for cleartext credentials in HTTP, FTP, or TELNET sessions.
+Search for suspicious file transfers using File $\rightarrow$ Export Objects $\rightarrow$ HTTP / SMB.
+⚠️ Important
+Encrypted Traffic: Wireshark cannot read the payload of TLS/HTTPS traffic unless decryption keys are provided.
+Performance: Capturing on high-volume networks without filters can rapidly consume memory and disk space.
+🛡️ Security
+Ensure Wireshark is run with proper permissions (use designated capture groups or non-root users where possible) to minimize risk on the analyst workstation.
+Restrict raw packet captures containing sensitive operational data to secure storage.
+📚 References
+Wireshark Official Documentation
+Wireshark Display Filter Reference
