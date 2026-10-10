@@ -265,15 +265,8 @@ Avoid submitting sensitive or confidential data to online tools unless the envir
 - **Malware analysis:** Examine files and artifacts to understand their potential capabilities and behavior.
 - **Evidence-based conclusions:** Validate findings instead of assuming that every scan result or alert proves a security issue.
 
-## 19. Current Learning Status
 
-I have completed introductory hands-on learning through TryHackMe's Cyber Security 101 path and have started exploring additional cybersecurity learning paths.
-
-These activities provided initial exposure to tools, concepts, and investigation workflows. I will continue developing my skills through practice, documentation, and further training.
-
-This document is an evolving reference and will be updated as my understanding improves.
-
-## 20. Planned Improvements
+## 19. Planned Improvements
 
 As my skills develop, I intend to:
 - Add practical examples and explanations of selected commands.
