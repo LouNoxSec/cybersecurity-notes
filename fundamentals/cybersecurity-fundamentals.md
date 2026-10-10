@@ -254,26 +254,3 @@ Avoid submitting sensitive or confidential data to online tools unless the envir
 **Important:** Suspicious files must be handled carefully. Use appropriate isolation and lab safety measures to reduce the risk of accidental execution or system compromise.
 
 **Further study:** Explore the tools included in the environment and understand when Windows-based analysis is useful alongside Linux-based tools such as REMnux.
-
-## 18. Core Concepts to Revisit
-
-- **Reconnaissance:** Gather information about authorized targets before further testing.
-- **Network analysis:** Inspect packets and protocols to understand communications.
-- **Authentication security:** Identify weak credentials and inadequate protections.
-- **Web application security:** Understand requests, responses, input validation, and common vulnerabilities.
-- **Detection and monitoring:** Use logs, SIEM platforms, and IDS alerts to investigate suspicious activity.
-- **Malware analysis:** Examine files and artifacts to understand their potential capabilities and behavior.
-- **Evidence-based conclusions:** Validate findings instead of assuming that every scan result or alert proves a security issue.
-
-
-## 19. Planned Improvements
-
-As my skills develop, I intend to:
-- Add practical examples and explanations of selected commands.
-- Create dedicated pages for individual tools and technologies.
-- Document lessons learned from authorized labs.
-- Include references to official documentation.
-- Record common mistakes and troubleshooting techniques.
-- Add sanitized screenshots or sample outputs where useful.
-- Develop detailed lab write-ups for selected portfolio projects.
-- Review and update these notes as my understanding improves.
