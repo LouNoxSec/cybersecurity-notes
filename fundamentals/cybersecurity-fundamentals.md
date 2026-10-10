@@ -2,11 +2,162 @@
 
 ## Overview
 
-This document summarizes the cybersecurity tools, technologies, programming languages, and analysis environments introduced during my initial hands-on learning through TryHackMe and other training resources.
+This document summarizes the cybersecurity concepts, principles, tools, technologies, programming languages, and analysis environments introduced during my initial hands-on learning through TryHackMe and other training resources.
 
 The goal is to build a structured reference, reinforce fundamental concepts, and identify topics that require further practice.
 
 These notes represent an ongoing learning process, not a claim of mastery.
+
+## Core Cybersecurity Concepts
+
+### 1. The CIA Triad
+
+The CIA triad is a fundamental model used to describe the three main objectives of information security.
+
+- **Confidentiality:** Ensures that information is accessible only to authorized users.  
+  *Example:* Encrypting sensitive files and restricting access through permissions.
+
+- **Integrity:** Ensures that information remains accurate and is not modified without authorization.  
+  *Example:* Using cryptographic hashes to detect unexpected file modifications.
+
+- **Availability:** Ensures that systems and information remain accessible when needed.  
+  *Example:* Using backups, redundancy, and protection against denial-of-service attacks.
+
+### 2. Authentication, Authorization, and Accounting (AAA)
+
+AAA is a framework for managing and tracking access to systems and resources.
+
+- **Authentication:** Verifies who a user or system is.
+- **Authorization:** Determines what an authenticated user or system is allowed to do.
+- **Accounting:** Records activities and resource usage for monitoring and auditing.
+
+*Example:* A user logs in with multifactor authentication, receives access only to permitted resources, and their activity is recorded in logs.
+
+### 3. Identification, Authentication, and Authorization
+
+These concepts describe different stages of access control.
+
+- **Identification:** A user claims an identity, for example by entering a username.
+- **Authentication:** The system verifies the claimed identity.
+- **Authorization:** The system determines which resources the user can access.
+
+**Important:** Being authenticated does not automatically mean having permission to access every resource.
+
+### 4. Least Privilege
+
+The principle of least privilege means granting users, applications, and systems only the permissions necessary to perform their tasks.
+
+*Example:* A standard user should not need domain administrator privileges to read a document.
+
+### 5. Defense in Depth
+
+Defense in depth uses multiple layers of security controls so that the failure of one control does not automatically compromise the entire system.
+
+*Example:* Combining firewalls, endpoint protection, multifactor authentication, network segmentation, and centralized logging.
+
+### 6. Threats, Vulnerabilities, Exploits, and Risk
+
+These terms describe related but different security concepts.
+
+- **Threat:** Something capable of causing harm, such as a malicious actor or a destructive event.
+- **Vulnerability:** A weakness that could be exploited.
+- **Exploit:** A technique or piece of code used to take advantage of a vulnerability.
+- **Risk:** The potential for loss or harm, considering the likelihood and impact of an event.
+
+*Example:* An unpatched server contains a vulnerability. An attacker may use an exploit to compromise it, creating risks such as data theft or service disruption.
+
+### 7. Security Controls
+
+Security controls are measures used to reduce security risks. They can be classified by their purpose and function.
+
+**By purpose:**
+- **Preventive:** Attempt to stop an incident before it occurs.
+- **Detective:** Identify or alert on suspicious activity.
+- **Corrective:** Help restore systems or correct problems after an incident.
+- **Deterrent:** Discourage unauthorized or harmful actions.
+- **Compensating:** Provide an alternative when a preferred control cannot be implemented.
+
+*Examples:* A firewall can be preventive, an IDS can be detective, and restoring from a backup can be corrective.
+
+### 8. Encryption, Hashing, and Encoding
+
+These techniques transform data for different purposes and should not be confused.
+
+- **Encryption:** Protects confidentiality by transforming data so that it can be recovered with the appropriate decryption key.
+- **Hashing:** Produces a fixed-length digest used for purposes such as integrity verification. Secure password storage uses specialized password-hashing methods.
+- **Encoding:** Changes the representation of data so that it can be stored or transmitted in a particular format. It does not inherently provide confidentiality.
+
+*Examples:* AES is an encryption algorithm, SHA-256 is a cryptographic hash function, and Base64 is an encoding scheme.
+
+### 9. Access Control
+
+Access control determines who or what can access resources and which actions are permitted.
+
+Common models include:
+
+- **DAC (Discretionary Access Control):** Resource owners can determine access permissions.
+- **MAC (Mandatory Access Control):** Access is governed by centrally defined policies, often using security labels.
+- **RBAC (Role-Based Access Control):** Permissions are assigned to roles.
+- **ABAC (Attribute-Based Access Control):** Access decisions use attributes such as user identity, resource, action, or environmental conditions.
+
+### 10. The Principle of Zero Trust
+
+Zero Trust is a security approach based on the principle that access should not be granted solely because a user or device is inside a trusted network.
+
+Key ideas include:
+- Verify access requests explicitly.
+- Apply least-privilege access.
+- Assess and monitor access continuously where appropriate.
+
+Zero Trust is an architectural approach, not a single product or tool.
+
+### 11. Incident Response
+
+Incident response is the structured process of handling suspected or confirmed security incidents.
+
+Common phases include:
+- **Preparation:** Establish procedures, tools, and responsibilities.
+- **Detection and analysis:** Identify suspicious activity and determine its significance.
+- **Containment:** Limit the incident's impact.
+- **Eradication:** Remove the threat and its underlying cause.
+- **Recovery:** Restore normal operations safely.
+- **Lessons learned:** Review the incident and improve defenses.
+
+Organizations may use different frameworks and phase names, but the overall goal is to manage incidents effectively and reduce future risk.
+
+### 12. Indicators of Compromise (IOCs)
+
+Indicators of Compromise are observable artifacts that may suggest malicious activity.
+
+Examples include:
+- Suspicious IP addresses or domain names
+- File hashes associated with known malware
+- Unusual processes or persistence mechanisms
+- Unexpected authentication events
+
+**Important:** An IOC is a clue, not necessarily proof of compromise. Findings should be evaluated in context and corroborated with additional evidence.
+
+### 13. Vulnerability Assessment and Penetration Testing
+
+These activities have related but different objectives.
+
+- **Vulnerability assessment:** Identifies and evaluates potential security weaknesses.
+- **Penetration testing:** Uses authorized, controlled techniques to validate whether weaknesses can be exploited and assess their potential impact.
+
+Both require a clearly defined scope and appropriate authorization.
+
+### 14. Social Engineering
+
+Social engineering manipulates people into revealing information, granting access, or performing actions that may compromise security.
+
+Common examples include:
+- **Phishing:** Fraudulent messages designed to deceive recipients.
+- **Pretexting:** Using a fabricated scenario to gain trust or obtain information.
+- **Impersonation:** Pretending to be a trusted person or organization.
+
+Security awareness, verification procedures, and multifactor authentication can help reduce the risk.
+
+## Cybersecurity Tools
 
 ## 1. Network Traffic Analysis — Wireshark
 
